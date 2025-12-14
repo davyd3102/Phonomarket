@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="uk">
+<html lang="uk" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,12 +14,23 @@
         <span class="brand-title">PHONO<span class="brand-accent">MARKET</span></span>
       </div>
 
-      <nav class="site-nav" aria-label="Навігація">
+      <nav class="site-nav" id="siteNav" aria-label="Навігація">
         <a class="nav-link" href="index.html">Головна</a>
-        <a class="nav-link" href="#catalog">Каталог</a>
-        <a class="nav-link" href="tel:+380999222474">Доставка</a>
-        <a class="nav-link" href="tel:+380999222474">Повернення</a>
+        <a class="nav-link" href="delivery.html">Доставка</a>
+        <a class="nav-link" href="returns.html">Повернення</a>
       </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Змінити тему" aria-pressed="false">
+          <span data-theme-icon aria-hidden="true">🌙</span>
+        </button>
+
+        <button class="menu-btn" type="button" data-menu-btn aria-label="Меню" aria-expanded="false">
+          <span class="menu-lines" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -29,7 +40,7 @@
       <p class="muted">Натисни “Замовити” — відкриється дзвінок.</p>
     </section>
 
-    <section id="catalog" class="products reveal">
+    <section class="products reveal">
       <article class="product-card">
         <h2>HF BIG HOCO W56+ BT (уточніть колір)</h2>
         <img src="https://learn.logikaschool.com/uploads/student/4796102/688dc7ac1f106.jpg" alt="HF BIG HOCO W56+BT" loading="lazy">
@@ -64,33 +75,15 @@
 
   <footer class="site-footer">
     <div class="container footer-inner reveal">
-      <div class="footer-social">
-        <a class="icon-btn" href="https://www.facebook.com/share/179peD5Ror/" aria-label="Facebook">
-          <img alt="Facebook" loading="lazy"
-               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAApVBMVEUIZf////////v///0AYv8AW/7B1v4/gP8AXf///v+guf8AZv7q8P4AWP4AYP/c6f3U4v4AVv7I2vwZb/3x9vzh7PwAXvqkwP+Ws/5nl/0jdP8zfP1RjPx8ov60yvzA1P9OhPcIafpgk/70+vmnwvh8pPpunfzp8vqWu/5BgvwAVP/U5f0nd/3h6f11nfu3zfuGrPw8gvfp9fmOrP7J3fmQtPqEq/XlAFytAAANY0lEQVR4nN2dCXfa...==" />
-        </a>
-        <a class="icon-btn" href="https://www.tiktok.com/@phonomarket?is_from_webapp=1&sender_device=pc" aria-label="TikTok">
-          <img alt="TikTok" loading="lazy"
-               src="https://learn.logikaschool.com/uploads/student/4796102/68f338673d1b1.png" />
-        </a>
-        <a class="icon-btn" href="https://www.instagram.com/volodimirglukhenko?igsh=MTJwanBvNWxsbmdjYw==" aria-label="Instagram">
-          <img alt="Instagram" loading="lazy"
-               src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/...==" />
-        </a>
-      </div>
-
       <p class="footer-text"><b>Де ви можете нас знайти!</b></p>
     </div>
   </footer>
 
-  <script>
-    const els = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver((entries) => {
-      for (const e of entries) {
-        if (e.isIntersecting) e.target.classList.add("in-view");
-      }
-    }, { threshold: 0.12 });
-    els.forEach(el => io.observe(el));
-  </script>
+  <div class="sticky-bar" aria-label="Швидкі дії">
+    <a class="btn primary" href="tel:+380999222474">📞 Подзвонити</a>
+    <a class="btn ghost" href="index.html">🏠 Головна</a>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
